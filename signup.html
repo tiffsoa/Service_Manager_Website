@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up For Customers</title>
+    <link rel="stylesheet" href="css/signup.css">
+    <script defer src="/js/signup.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img id="logo" src="https://pbs.twimg.com/media/F-0cCM_bEAADC6_.png" alt="company logo">
+            <div class="form">
+                <h1 id="title">Sign Up</h1>
+            <p id="invitation">Welcome! Please fill out this form to create an account.</p>
+            <form id="form" action="/signin_c.html" method="post">
+                <label for="name">Last Name</label><br>
+                <input type="name" id="lastname" name="name" required><br>
+
+                <label for="name">First Name</label><br>
+                <input type="name" id="firstname" name="name" required><br>
+
+                <label for="phone">Phone Number</label><br>
+                <input type="phone" id="phoneNumber" name="phone" required><br>
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" required><br>
+
+                <label for="password">Password</label><br>
+                <input type="password" id="password" name="password" required><br>
+
+                <label for="password">Confirm password</label><br>
+                <input type="password" id="confirmPassword" name="password" required><br>
+
+                <div id="error"></div>
+
+                <button class="button_s" type="submit">Continue</button>
+
+            </form>
+            </div>
+        </div>
+        <div class="right-side">
+            <img id="img" src="https://cdn3d.iconscout.com/3d/premium/thumb/freelancer-working-from-home-3d-illustration-download-in-png-blend-fbx-gltf-file-formats--sitting-on-laptop-work-business-character-pack-people-illustrations-2569229.png">
+        </div>
+    </div>
+</body>
+</html>
