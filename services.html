@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services</title>
+    <link rel="stylesheet" href="css/services.css">
+    <script defer src="/js/services.js"></script>
+
+</head>
+<body>
+    <div class="topnav">
+        <a href="customer-dashboard.html">PROFILE</a> <!-- Can businesses see the services too ? Or is this just for customers? Here you need to redirect based on the login credentials-->
+        <a class="active" href="services.html">SERVICES</a>
+        <a href="homepage.html">HOME</a>
+    </div>
+
+    <div class="services-header">
+        Services
+    </div>
+
+    <h1 id="category-title">All Services</h1>
+
+    <div class="container">
+
+        <div class="sidebar">
+            <h3 id="our-services">Our Services</h3>
+            <ul>
+                <li onclick="filterServices('all')">All Services</li>
+                <li onclick="filterServices('cleaning')">Cleaning Services</li>
+                <li onclick="filterServices('outdoors')">Outdoors Services</li>
+                <li onclick="filterServices('repair')">Repair Services</li>
+                <li onclick="filterServices('beauty')">Beauty Services</li>
+                <li onclick="filterServices('babysitting')">Babysitting Services</li>
+            </ul>
+
+        </div>
+
+        <div class="services-grid">
+            <a href="service-detail.html" class="service-card" data-category="cleaning">
+                <img class="service-icon" src="https://www.shutterstock.com/image-illustration/cartoon-broom-sweeping-autumn-3d-600nw-2070144128.jpg" alt="cleaning 3d">
+                <h4>Home Cleaning</h4>
+                <h5>CleanPro</h5>
+            </a>
+
+            <a href="service-detail.html" class="service-card" data-category="outdoors">
+                <img class="service-icon" src="https://img.freepik.com/premium-vector/flower-plant-with-leaves-pot-gardening-concept-3d-vector-icon-cartoon-minimal-style_365941-783.jpg" alt="plant 3d">
+                <h4>Garden Maintenance</h4>
+                <h5>Gardina</h5>
+            </a>
+    
+            <a href="service-detail.html" class="service-card" data-category="repair">
+                <img class="service-icon" src="https://media.istockphoto.com/id/1474722454/vector/repair-tools-with-wrench-and-screwdriver-fix-and-repair-concept-3d-vector-icon-cartoon.jpg?s=612x612&w=0&k=20&c=AwUv4DaoB_WnGl9DOa7zXqaICNf58IDWZ9EYuQSJ7V8=" alt="car repare 3d">
+                <h4>Car Repair</h4>
+                <h5>CarFast</h5>
+            </a>
+    
+            <a href="service-detail.html" class="service-card" data-category="cleaning">
+                <img class="service-icon" src="https://cdn3d.iconscout.com/3d/premium/thumb/sprayer-3d-icon-download-in-png-blend-fbx-gltf-file-formats--spray-hygiene-wash-washing-cleaning-housekeeping-pack-tools-equipment-icons-9518378.png" alt="deep cleaning 3d">
+                <h4>Deep Cleaning</h4>
+                <h5>Sparky</h5>
+            </a>
+    
+            <a href="service-detail.html" class="service-card" data-category="beauty">
+                <img class="service-icon" src="https://cdn3d.iconscout.com/3d/premium/thumb/makeup-powder-3d-icon-download-in-png-blend-fbx-gltf-file-formats--brush-face-compact-beauty-and-care-pack-icons-5036967.png?f=webp" alt="makeup 3d">
+                <h4>Wedding Makeup</h4>
+                <h5>Lovhair</h5>
+            </a>
+    
+            <a href="service-detail.html" class="service-card" data-category="babysitting">
+                <img class="service-icon" src="https://cdn3d.iconscout.com/3d/premium/thumb/baby-sitter-3d-icon-download-in-png-blend-fbx-gltf-file-formats--lady-babysitter-woman-female-avatars-pack-people-icons-6758379.png" alt="babysitting 3d">
+                <h4>Babysitting</h4>
+                <h5>CoolestSitter</h5>
+            </a>
+        </div>
+
+    </div>
+</body>
+</html>
