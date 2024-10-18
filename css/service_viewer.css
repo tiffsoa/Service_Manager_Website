@@ -1,0 +1,111 @@
+/* General Styles */
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://img.freepik.com/free-vector/green-blue-gradient-blur-background_53876-105432.jpg');
+    margin: 0;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding: 20px;
+    margin: 50px 100px;
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#backButton {
+    background-color: #630da9;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#backButton:hover {
+    background-color: #0A4834;
+}
+
+/* Service Details Section */
+.service-details {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(243, 241, 246, 0.855);
+}
+
+.service-details h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+/* Service Actions Section */
+.service-actions {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    background-color: rgba(243, 241, 246, 0.855);
+}
+
+.service-actions h2 {
+    margin-top: 0;
+    font-size: 24px;
+}
+
+button {
+    padding: 10px 15px;
+    margin: 20px 0; /* Margin for spacing buttons */
+    border: none;
+    border-radius: 5px;
+    background-color: #630da9; /* Button background color */
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+button:hover {
+    background-color: #0A4834; /* Button hover color */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        margin: 20px;
+    }
+
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    #backButton {
+        margin-top: 10px;
+    }
+}
+.service {
+    background-color: rgba(243, 241, 246, 0.9); /* Light background for services */
+    margin: 10px 0; /* Space between service items */
+    padding: 20px; /* Padding inside service items */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
