@@ -1,0 +1,216 @@
+/* Admin Dashboard container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow-y: auto; /* Allows vertical scrolling if the content overflows */
+    max-height: 90vh; /* Limits the height to fit within the viewport */
+}
+
+/* Left-Side Styles (Navigation & Logo) */
+.left-side {
+    width: 35%;
+    padding: 50px;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 30px;
+}
+
+#logo {
+    width: 50%;
+    height: auto;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.nav-bar ul li {
+    margin: 15px 0;
+}
+
+.nav-bar ul li a {
+    text-decoration: none;
+    font-size: 18px;
+    color: #630da9;
+}
+
+.nav-bar ul li a:hover {
+    color: #0A4834;
+}
+
+/* Right-Side Styles (Main Dashboard Content) */
+.right-side {
+    width: 65%;
+    padding: 20px;
+    background-color: rgba(243, 241, 246, 0.855);
+    border-radius: 30px;
+    overflow: visible; /* Ensures the container expands if needed */
+}
+
+/* Form and Input Field Styles */
+.form {
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+label {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 90%;
+    height: 30px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    background-color: rgba(243, 241, 246, 0.855);
+}
+
+/* Button Styles */
+.button_s {
+    background-color: #630da9;
+    color: #fff;
+    margin-top: 10px;
+    width: 94%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button_s:hover {
+    background-color: #0A4834;
+}
+
+/* Heading and Section Title Styles */
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 20px 0 10px 0;
+    color: #630da9;
+}
+
+h3 {
+    font-size: 22px;
+    margin: 10px 0;
+}
+
+/* Select Box Styles */
+select {
+    width: 90%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin: 10px 0 20px 0;
+    background-color: rgba(243, 241, 246, 0.855);
+}
+
+/* Ensure that the page itself expands as content grows */
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://img.freepik.com/free-vector/green-blue-gradient-blur-background_53876-105432.jpg');
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.error {
+    font-size: 16px;
+    color: red;
+}
+
+/* Service List Styles */
+#services-list {
+    max-height: 200px; /* Set a reasonable height limit before it scrolls */
+    overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(243, 241, 246, 0.855);
+}
+
+/* Modify Section Styles */
+#modify-section {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: rgba(243, 241, 246, 0.855);
+}
+
+/* Adjusting spacing for service lists and modification area */
+#services-list, #modify-section {
+    margin-bottom: 20px; /* Add space below to prevent overlap */
+}
+
+/* Ensure spacing between sections */
+section {
+    margin-bottom: 40px; /* Space between different sections on the dashboard */
+}
+
+/* For elements inside the sections to have proper spacing */
+form, div, select, input {
+    margin-bottom: 15px;
+}
+
+/* Custom scrollbar styling */
+#services-list::-webkit-scrollbar,
+.container::-webkit-scrollbar {
+    width: 8px; /* Adjust the width of the scrollbar */
+}
+
+#services-list::-webkit-scrollbar-track,
+.container::-webkit-scrollbar-track {
+    background: rgba(200, 200, 200, 0.2); /* Light background for the track */
+    border-radius: 10px; /* Rounded edges for the track */
+}
+
+#services-list::-webkit-scrollbar-thumb,
+.container::-webkit-scrollbar-thumb {
+    background-color: #630da9; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Rounded edges for the thumb */
+    border: 2px solid rgba(243, 241, 246, 0.855); /* Space around the thumb */
+}
+
+#services-list::-webkit-scrollbar-thumb:hover,
+.container::-webkit-scrollbar-thumb:hover {
+    background-color: #8a2be2; /* Slightly brighter color on hover */
+}
+
+/* Ensure the scrollbar styling applies to all scrollable areas */
+#services-list,
+#modify-section,
+.container {
+    scrollbar-width: thin; /* For Firefox */
+    scrollbar-color: #630da9 rgba(200, 200, 200, 0.2); /* For Firefox */
+}
