@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="admin_dashboard.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="left-side">
+            <img id="logo" src="https://pbs.twimg.com/media/F-0cCM_bEAADC6_.png" alt="company logo">
+            <nav class="nav-bar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#manage-services">Manage Services</a></li>
+                    <li><a href="#customer-management">Customer Management</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <div class="right-side">
+            <h1>Admin Dashboard</h1>
+
+            <section id="manage-services">
+                <h2>Manage Services</h2>
+                <div class="form">
+                    <form id="service-form">
+                        <label for="service-name">Service Name</label>
+                        <input type="text" id="service-name" placeholder="Service Name" required>
+                        <label for="service-price">Price</label>
+                        <input type="number" id="service-price" placeholder="Price" required>
+                        <button class="button_s" type="submit">Add Service</button>
+                    </form>
+                </div>
+
+                <h3>Current Services</h3>
+                <div id="services-list"></div>
+
+                <h3>Modify Service</h3>
+                <select id="service-select">
+                    <option value="">Select a service</option>
+                </select>
+                <div id="modify-section" style="display: none;">
+                    <label for="new-service-price">New Price</label>
+                    <input type="number" id="new-service-price" placeholder="New Price" required>
+                    <button id="modify-button">Modify Service</button>
+                </div>
+            </section>
+
+            <section id="customer-management">
+                <h2>Customer Management</h2>
+                <h3>Client Accounts</h3>
+                <div id="client-list"></div>
+            </section>
+        </div>
+    </div>
+
+    <script src="admin_dashboard.js"></script>
+</body>
+
+</html>
