@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="customer_dashboard.css">
+    <title>Customer Dashboard</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Customer Dashboard</h1>
+            <button id="signOut">Sign Out</button>
+        </header>
+
+        <section class="edit-delete">
+            <h2>Edit and Delete</h2>
+            <button id="updatePassword">Update Password</button>
+            <button id="deleteAccount">Delete Account</button>
+        </section>
+
+        <section class="billing">
+            <h2>Overview of Billings</h2>
+            <ul>
+                <li>Invoice #001 - Amount: $150 - Status: Paid</li>
+                <li>Invoice #002 - Amount: $200 - Status: Pending</li>
+            </ul>
+        </section>
+
+        <section class="services">
+            <h2>Your Services</h2>
+            <div id="serviceList">
+                <!-- Services will be dynamically populated here -->
+            </div>
+            <div id="loading" style="display: none;">Loading more services...</div>
+        </section>
+    </div>
+
+    <script src="customer_dashboard.js"></script>
+</body>
+</html>
