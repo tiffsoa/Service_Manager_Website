@@ -211,6 +211,6 @@ form, div, select, input {
 #services-list,
 #modify-section,
 .container {
-    scrollbar-width: thin; /* For Firefox */
-    scrollbar-color: #630da9 rgba(200, 200, 200, 0.2); /* For Firefox */
+    scrollbar-width: thin; 
+    scrollbar-color: #630da9 rgba(200, 200, 200, 0.2); 
 }
