@@ -29,6 +29,35 @@
     margin-right: 5px;
 }
 
+.search-wrapper {
+    margin-bottom: 50px;
+}
+
+#search {
+    border-radius: 40px;
+    padding: 20px;
+    width: 50%;
+    margin-left: 30%;
+    border: 1px solid #ccc;
+}
+
+.search-wrapper input[type="search"] {
+    width: 50%;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.search-wrapper input[type="search"]:focus{
+    border-color: #630da9;
+    box-shadow: 0 0 5px #6968c5;
+}
+
+.search-icon {
+    padding-top: 10px;
+    font-size: 20px;
+    color: rgba(154, 150, 157, 0.855);
+}
+
 .services-header {
     border: 1px solid rgba(154, 150, 157, 0.855);
     width: fit-content;
@@ -45,9 +74,9 @@
     margin-top: 30px;
 }
 
-#our-services {
+#navigation {
     font-size: 30px;
-    margin-bottom: -7px;
+    margin-bottom: 30px;
 }
 .sidebar ul {
     list-style-type: none;
@@ -56,11 +85,11 @@
 
 .sidebar li {
     cursor: pointer;
-    margin: 7px 0;
+    margin: 15px 0;
     margin-right: 10px;
     padding: 15px;
     border: 1px solid #ccc;
-    width: fit-content;
+    width: 80%;
     border-radius: 40px;
     
 }
@@ -90,7 +119,8 @@
 }
 
 .service-card {
-    width: 25%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     margin: 10px;
     padding: 10px;
     cursor: pointer;
