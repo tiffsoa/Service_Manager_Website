@@ -12,6 +12,31 @@ body {
     background-image: url('https://img.freepik.com/free-vector/green-blue-gradient-blur-background_53876-105432.jpg');
 }
 
+.topnav {
+    background-color: #fff;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.topnav a {
+    float: right;
+    color: rgba(101, 97, 105, 0.855);
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.topnav a.active {
+    color: #000;
+    text-decoration: underline;
+}
+
 /* Container */
 .container {
     display: flex;
