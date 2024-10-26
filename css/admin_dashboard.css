@@ -4,52 +4,43 @@
     max-width: 1200px;
     background-color: #fff;
     padding: 20px;
-    border-radius: 20px;
+    border-radius: 30px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     overflow-y: auto; /* Allows vertical scrolling if the content overflows */
     max-height: 90vh; /* Limits the height to fit within the viewport */
 }
 
-/* Left-Side Styles (Navigation & Logo) */
-.left-side {
-    width: 35%;
-    padding: 50px;
+.topnav {
     background-color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    border-radius: 30px;
+    overflow: hidden;
+    margin-bottom: 40px;
 }
 
-#logo {
-    width: 50%;
-    height: auto;
-}
-
-.nav-bar ul {
-    list-style-type: none;
-    padding: 0;
-    margin-top: 20px;
-}
-
-.nav-bar ul li {
-    margin: 15px 0;
-}
-
-.nav-bar ul li a {
+.topnav a {
+    float: right;
+    color: rgba(101, 97, 105, 0.855);
+    text-align: center;
+    padding: 14px 20px;
     text-decoration: none;
-    font-size: 18px;
-    color: #630da9;
+    font-size: 17px;
 }
 
-.nav-bar ul li a:hover {
-    color: #0A4834;
+.topnav a:hover {
+    text-decoration: underline;
+    color: #000;
 }
+
+.topnav a.active {
+    color: #000;
+    text-decoration: underline;
+}
+
 
 /* Right-Side Styles (Main Dashboard Content) */
 .right-side {
-    width: 65%;
-    padding: 20px;
+    width: 94%;
+    margin-top: -20px;
+    padding: 40px;
     background-color: rgba(243, 241, 246, 0.855);
     border-radius: 30px;
     overflow: visible; /* Ensures the container expands if needed */
@@ -153,6 +144,7 @@ body {
     max-height: 200px; /* Set a reasonable height limit before it scrolls */
     overflow-y: auto; /* Enable vertical scrolling if content exceeds max height */
     margin-top: 10px;
+    width: 85%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 10px;

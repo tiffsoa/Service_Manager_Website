@@ -10,16 +10,12 @@
 
 <body>
     <div class="container">
-        <div class="left-side">
-            <img id="logo" src="https://pbs.twimg.com/media/F-0cCM_bEAADC6_.png" alt="company logo">
-            <nav class="nav-bar">
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="#manage-services">Manage Services</a></li>
-                    <li><a href="#customer-management">Customer Management</a></li>
-                </ul>
-            </nav>
+        <div class="topnav">
+            <a class="active">PROFILE</a> <!-- Can businesses see the services too ? Or is this just for customers? Here you need to redirect based on the login credentials-->
+            <a href="services.html">SERVICES</a>
+            <a href="homepage.html">HOME</a>
         </div>
+
 
         <div class="right-side">
             <h1>Admin Dashboard</h1>
@@ -28,9 +24,9 @@
                 <h2>Manage Services</h2>
                 <div class="form">
                     <form id="service-form">
-                        <label for="service-name">Service Name</label>
-                        <input type="text" id="service-name" placeholder="Service Name" required>
-                        <label for="service-price">Price</label>
+                        <label for="service-name">Service Name</label><br>
+                        <input type="text" id="service-name" placeholder="Service Name" required><br>
+                        <label for="service-price">Price</label><br>
                         <input type="number" id="service-price" placeholder="Price" required>
                         <button class="button_s" type="submit">Add Service</button>
                     </form>
