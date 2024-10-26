@@ -1,9 +1,9 @@
 // Service and Customer Data
 const services = [];
 const customers = [
-    { name: "Alice Smith", email: "alice@example.com", unpaidAmount: 50 },
-    { name: "Bob Johnson", email: "bob@example.com", unpaidAmount: 0 },
-    { name: "Carol White", email: "carol@example.com", unpaidAmount: 75 },
+    { name: "Alice Smith", email: "alice@example.com", unpaidAmount: 50, serviceDate: "2024-01-15" },
+    { name: "Bob Johnson", email: "bob@example.com", unpaidAmount: 0, serviceDate: "2024-02-22" },
+    { name: "Carol White", email: "carol@example.com", unpaidAmount: 75, serviceDate: "2023-11-05" },
 ];
 
 // Function to update the services overview section
@@ -92,8 +92,8 @@ function updateClientList() {
     const clientList = document.getElementById('client-list');
     clientList.innerHTML = customers.length 
         ? customers.map((customer, index) => `
-            <div>
-                ${customer.name} (${customer.email}) - ${customer.unpaidAmount > 0 ? 'Unpaid: $' + customer.unpaidAmount : 'Paid'}
+            <div style="color: ${customer.unpaidAmount > 0 ? 'red' : 'black'}">
+                ${customer.name} (${customer.email}) - Date of Service Booked: ${customer.serviceDate} - ${customer.unpaidAmount > 0 ? 'Unpaid: $' + customer.unpaidAmount : 'Paid'}
                 ${customer.unpaidAmount > 0 ? `<button onclick="followUp(${index})">Follow Up</button>` : ''}
             </div>
         `).join('')
@@ -103,12 +103,53 @@ function updateClientList() {
 // Function to follow up with a client
 function followUp(index) {
     const customer = customers[index];
-    // For now, show an alert
     alert(`Following up with ${customer.name} at ${customer.email} regarding their unpaid bills of $${customer.unpaidAmount}.`);
 }
 
+// Admin Profile Data
+const adminProfile = {
+    name: "Default Admin",
+    logo: "https://via.placeholder.com/100", // Default logo URL
+    address: "1234 Default Address, City, Country"
+};
+
+// Function to update the admin profile display
+function updateAdminDetails() {
+    const adminDetails = document.getElementById('admin-details');
+    adminDetails.innerHTML = `
+        <div>
+            <img src="${adminProfile.logo}" alt="Admin Logo" width="100" height="100"><br>
+            <strong>Name:</strong> ${adminProfile.name}<br>
+            <strong>Address:</strong> ${adminProfile.address}
+        </div>
+    `;
+}
+
+// Handle admin profile update
+document.getElementById('admin-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+
+    // Get updated values from the form inputs
+    const adminName = document.getElementById('admin-name').value.trim();
+    const adminLogo = document.getElementById('admin-logo').value.trim();
+    const adminAddress = document.getElementById('admin-address').value.trim();
+
+    // Update adminProfile array with new values
+    adminProfile.name = adminName || adminProfile.name;
+    adminProfile.logo = adminLogo || adminProfile.logo;
+    adminProfile.address = adminAddress || adminProfile.address;
+
+    // Update the admin details display
+    updateAdminDetails();
+
+    // Clear the input fields
+    document.getElementById('admin-name').value = '';
+    document.getElementById('admin-logo').value = '';
+    document.getElementById('admin-address').value = '';
+});
 
 // Initialize the dashboard
+updateAdminDetails();
 updateOverview();
 updateServiceSelect();
 updateClientList();
