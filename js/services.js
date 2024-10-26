@@ -15,16 +15,16 @@
             service.style.display = 'none';
         }
     });
-}
+} 
 */
 
 const services = [
-    { name: "House Cleaning", company: "AllHomia", description: "Cleaning and organizing homes"},
-    { name: "Garden Maintenance", company: "AllHomia", description: "Making your garden look pretty and clean"},
-    { name: "Plumbing", company: "AllHomia", description: "Fixing leaks and installing pipes"},
-    { name: "Lawn Mowing", company: "AllHomia", description: "Maintening lawns and gardens"},
-    { name: "Deep Cleaning", company: "AllHomia", description: "Cleaning every corner of your house"},
-    { name: "Furniture Installation", company: "AllHomia", description: "Transporting and isntalling your furniture for you"},
+    { name: "House Cleaning", company: "AllHomia", description: "Cleaning and organizing homes", price: 90},
+    { name: "Garden Maintenance", company: "AllHomia", description: "Making your garden look pretty and clean", price: 150},
+    { name: "Plumbing", company: "AllHomia", description: "Fixing leaks and installing pipes", price: 60},
+    { name: "Lawn Mowing", company: "AllHomia", description: "Maintening lawns and gardens", price: 50},
+    { name: "Deep Cleaning", company: "AllHomia", description: "Cleaning every corner of your house", price: 140},
+    { name: "Furniture Installation", company: "AllHomia", description: "Transporting and isntalling your furniture for you", price: 100},
 ];
 
 function displayServices(serviceArray) {
@@ -36,10 +36,20 @@ function displayServices(serviceArray) {
             <div class="service-card">
                 <h4>${service.name}</h4>
                 <p>${service.description}</p>
-                <h5>${service.company}</h5>
+                <div class="prices"> $${service.price} </div>
+                <button class="book-now">Book Now</button>
             </div>
         `;
         container.innerHTML += card;
+    });
+
+    //after generating the buttons, we collect all buttons with the .book-now class using the following function, and loop through each button and attach a click event listener.
+    const bookButtons = document.querySelectorAll('.book-now');
+    bookButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            alert("This action will take you to the booking and payment form.");
+            window.location.href = "booking.html";
+        });
     });
 }
 
