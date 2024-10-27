@@ -5,21 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="css\admin_dashboard.css">
+    <link rel="stylesheet" href="css/admin_dashboard.css">
 </head>
 
 <body>
     <div class="container">
         <div class="topnav">
-            <a class="active">PROFILE</a> <!-- Can businesses see the services too ? Or is this just for customers? Here you need to redirect based on the login credentials-->
+            <a class="active">PROFILE</a>
             <a href="services.html">SERVICES</a>
             <a href="homepage.html">HOME</a>
         </div>
 
-
         <div class="right-side">
             <h1>Admin Dashboard</h1>
 
+            <!-- Admin Profile Section -->
+            <section id="admin-profile">
+                <h2>Admin Profile</h2>
+                <div class="form">
+                    <form id="admin-form">
+                        <label for="admin-name">Name</label><br>
+                        <input type="text" id="admin-name" placeholder="Admin Name" required><br>
+                        <label for="admin-logo">Logo URL</label><br>
+                        <input type="text" id="admin-logo" placeholder="Logo URL"><br>
+                        <label for="admin-address">Address</label><br>
+                        <input type="text" id="admin-address" placeholder="Admin Address"><br>
+                        <button type="submit">Update Profile</button>
+                    </form>
+                </div>
+                <h3>Current Admin Profile</h3>
+                <div id="admin-details"></div>
+            </section>
+
+            <!-- Existing Sections -->
             <section id="manage-services">
                 <h2>Manage Services</h2>
                 <div class="form">
@@ -54,7 +72,7 @@
         </div>
     </div>
 
-    <script src="js\admin_dashboard.js"></script>
+    <script src="js/admin_dashboard.js"></script>
 </body>
 
 </html>
