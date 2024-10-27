@@ -1,0 +1,132 @@
+ .container {
+    width: 1200px;
+    padding: 20px;
+} 
+
+box {
+    padding: 30px 30px 30px 30px;
+    width: 1200px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+}
+
+.topnav {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.topnav a {
+    float: right;
+    color: rgba(101, 97, 105, 0.855);
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.topnav a.active {
+    color: #000;
+    text-decoration: underline;
+}
+
+.main-content {
+    width: 94%;
+    margin-top: -20px;
+    padding: 40px;
+    background-color: rgba(243, 241, 246, 0.855);
+    border-radius: 30px;
+    overflow: visible; /* Ensures the container expands if needed */
+}
+
+.form {
+    width: 90%;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+label {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="tel"], 
+input[type="message"],
+input[type="email"],
+textarea{
+    width: 90%;
+    height: 30px;
+    padding: 10px;
+    margin: 10px 0 20px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    background-color: rgba(243, 241, 246, 0.855);
+}
+
+input[type="submit"]{
+    background-color: #630da9;
+    color: #fff;
+    margin-top: 10px;
+    width: 94%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    text-decoration: underline;
+}
+
+h1 {
+    font-size: 36px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+h2 {
+    font-size: 28px;
+    margin: 30px 0 10px 50px;
+    color: #630da9;
+}
+
+select {
+    width: 92%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    margin: 10px 0 20px 0;
+    background-color: rgba(243, 241, 246, 0.855);
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://img.freepik.com/free-vector/green-blue-gradient-blur-background_53876-105432.jpg');
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+form, div, select, input {
+    margin-bottom: 15px;
+}
+

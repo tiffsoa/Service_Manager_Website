@@ -31,8 +31,7 @@ box {
     padding: 30px 30px;
     background-color: white;
     display: flex;
-    justify-content: center;
-
+    justify-content: center; 
 }
 
 .topnav a {

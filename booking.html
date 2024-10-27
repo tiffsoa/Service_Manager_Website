@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Page</title>
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+
+<body>
+    <div class="box">
+        <div class="topnav">
+            <a href="customer_dashboard.html">PROFILE</a> 
+            <a class="active">SERVICES</a>
+            <a href="homepage.html">HOME</a>
+        </div>
+
+        <div class="container">
+            <div class="main-content">
+                <h1>Booking Form</h1>
+
+                <section id="manage-services">
+                    <h2>Requested Service </h2>
+                    <div class="form">
+
+                        <form id="booking-form" action="submit.js" method="post">
+                            <label for="client-name">Full Name </label>
+                            <input type="text" id="client-name" name="name" placeholder="First Last"> <br>
+                            <label for="email">Email </label> <br>
+                            <input type="email" id="email" placeholder="emailexample@gmail.com"> <br>
+                            <label for="tel">Phone number </label>
+                            <input type="tel" id="tel" placeholder="123-456-7890"> <br> 
+                            <label for="message">Address - where the service will be performed</label> <br>
+                            <textarea id="message" name="message" placeholder="123, Street, City, A1A 1A1, AB, Canada"></textarea>
+                            <br> 
+                            <label for="frequency">Frequency </label> <br>
+                            <select id="frequency" name="frequency">
+                                <option value="one-time">One-time</option>
+                                <option value="bi-Weekly">Bi-weekly</option>
+                                <option value="monthly">Monthly</option>
+                                <option value="black">Other - specify in comments below</option>
+                            </select>
+                            <br> <br>
+                            <label>Payment done by </label>
+                            <input type="radio" id="card" name="payment" value="card">
+                            <label for="yes">Card</label>
+                            <input type="radio" id="cash" name="payment" value="cash">
+                            <label for="no">Cash</label>
+                            <br><br>
+                            <label for="comments">Additional Comments/ Specific requests: </label> <br>
+                            <textarea id="comments" name="comments" placeholder="Please focus on *this area/part*"></textarea> <br><br>
+                            <label> I agree to the terms and conditions: </label>
+                            <input type="checkbox" id="agree" name="agree"> <br><br>
+                            <input type="submit" button class="submit" value="Submit Booking">
+
+                        </form>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+</body>
+
+<script  src="/js/booking.js"></script>
+</html>
