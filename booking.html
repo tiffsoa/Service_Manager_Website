@@ -11,7 +11,7 @@
     <div class="box">
         <div class="topnav">
             <a href="customer_dashboard.html">PROFILE</a> 
-            <a class="active">SERVICES</a>
+            <a class="active" href="services.html">SERVICES</a>
             <a href="homepage.html">HOME</a>
         </div>
 
@@ -20,48 +20,72 @@
                 <h1>Booking Form</h1>
 
                 <section id="manage-services">
-                    <h2>Requested Service </h2>
+                    <h2>Requested Service: </h2>
                     <div class="form">
 
-                        <form id="booking-form" action="submit.js" method="post">
+                        <form id="booking-form">
                             <label for="client-name">Full Name </label>
-                            <input type="text" id="client-name" name="name" placeholder="First Last"> <br>
+                            <input type="text" id="name" name="name" placeholder="First Last"> <br>
+
                             <label for="email">Email </label> <br>
                             <input type="email" id="email" placeholder="emailexample@gmail.com"> <br>
+                            
                             <label for="tel">Phone number </label>
                             <input type="tel" id="tel" placeholder="123-456-7890"> 
                             <br> 
+                            
                             <label for="message">Address - where the service will be performed</label> <br>
                             <textarea id="message" name="message" placeholder="123, Street, City, A1A 1A1, AB, Canada"></textarea>
                             <br> 
+                            
                             <label for="frequency">Frequency </label> 
                             <br>
                             <select id="frequency" name="frequency">
                                 <option value="one-time">One-time</option>
                                 <option value="bi-Weekly">Bi-weekly</option>
                                 <option value="monthly">Monthly</option>
-                                <option value="black">Other - specify in comments below</option>
+                                <option value="other">Other - specify in comments below</option>
                             </select> 
                             <br><br>
+                            
                             <label for="serviceDate">Date of service:</label>
-                            <input type="date" id="serviceDate" name="birthday">
+                            <input type="date" id="serviceDate" name="serviceDate">
                             <br><br>
+                            
                             <label for="comments">Additional Comments/ Specific requests: </label> <br>
                             <textarea id="comments" name="comments" placeholder="Please focus on *this area/part*"></textarea> <br><br>
+                            
                             <label>Payment done by </label>
                             <input type="radio" id="card" name="payment" value="card">
                             <label for="card">Card</label>
                             <input type="radio" id="cash" name="payment" value="cash">
                             <label for="cash">Cash</label> 
                             <br><br><br> 
+                            
                             <label> I agree to the terms and conditions: </label>
                             <input type="checkbox" id="agree" name="agree"> 
                             <br><br>
+                            
                             <input type="submit" button class="submit" value="Submit Booking">
 
                         </form>
                     </div>
                 </section>
+
+                <div class="confirmation" id="confirmation" style="display: none;">
+                    <h2>Confirmation</h2>
+                    <p id="confirmName"></p>
+                    <p id="confirmEmail"></p>
+                    <p id="confirmTel"></p>
+                    <p id="confirmMessage"></p>
+                    <p id="confirmFrequency"></p>
+                    <p id="confirmServiceDate"></p>
+                    <p id="confirmComments"></p>
+                    <p id="confirmPayment"></p>
+                    <br><br>
+                    <button onclick="resetForm()">Back to Form</button>
+                </div>
+
             </div>
         </div>
     </div>

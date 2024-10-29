@@ -73,7 +73,7 @@ textarea{
 }
 
 input[type="submit"]{
-    background-color: #630da9;
+    background-color: #660eea;
     color: #fff;
     margin-top: 10px;
     width: 94%;
@@ -131,4 +131,29 @@ form, div, select, input {
     margin-bottom: 15px;
 }
 
+p{
+    padding-left: 80px;
+    padding-top: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+}
+
+button {
+    background-color: #630da9;
+    color: #fff;
+    margin-top: 10px;
+    width: 94%;
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 40px;
+    text-align: center;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover{
+    text-decoration: underline;
+}
  
