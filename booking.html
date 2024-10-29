@@ -29,28 +29,34 @@
                             <label for="email">Email </label> <br>
                             <input type="email" id="email" placeholder="emailexample@gmail.com"> <br>
                             <label for="tel">Phone number </label>
-                            <input type="tel" id="tel" placeholder="123-456-7890"> <br> 
+                            <input type="tel" id="tel" placeholder="123-456-7890"> 
+                            <br> 
                             <label for="message">Address - where the service will be performed</label> <br>
                             <textarea id="message" name="message" placeholder="123, Street, City, A1A 1A1, AB, Canada"></textarea>
                             <br> 
-                            <label for="frequency">Frequency </label> <br>
+                            <label for="frequency">Frequency </label> 
+                            <br>
                             <select id="frequency" name="frequency">
                                 <option value="one-time">One-time</option>
                                 <option value="bi-Weekly">Bi-weekly</option>
                                 <option value="monthly">Monthly</option>
                                 <option value="black">Other - specify in comments below</option>
-                            </select>
-                            <br> <br>
-                            <label>Payment done by </label>
-                            <input type="radio" id="card" name="payment" value="card">
-                            <label for="yes">Card</label>
-                            <input type="radio" id="cash" name="payment" value="cash">
-                            <label for="no">Cash</label>
+                            </select> 
+                            <br><br>
+                            <label for="serviceDate">Date of service:</label>
+                            <input type="date" id="serviceDate" name="birthday">
                             <br><br>
                             <label for="comments">Additional Comments/ Specific requests: </label> <br>
                             <textarea id="comments" name="comments" placeholder="Please focus on *this area/part*"></textarea> <br><br>
+                            <label>Payment done by </label>
+                            <input type="radio" id="card" name="payment" value="card">
+                            <label for="card">Card</label>
+                            <input type="radio" id="cash" name="payment" value="cash">
+                            <label for="cash">Cash</label> 
+                            <br><br><br> 
                             <label> I agree to the terms and conditions: </label>
-                            <input type="checkbox" id="agree" name="agree"> <br><br>
+                            <input type="checkbox" id="agree" name="agree"> 
+                            <br><br>
                             <input type="submit" button class="submit" value="Submit Booking">
 
                         </form>

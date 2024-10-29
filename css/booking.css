@@ -41,7 +41,7 @@ box {
     padding: 40px;
     background-color: rgba(243, 241, 246, 0.855);
     border-radius: 30px;
-    overflow: visible; /* Ensures the container expands if needed */
+    overflow: visible; 
 }
 
 .form {
@@ -59,6 +59,7 @@ input[type="text"],
 input[type="tel"], 
 input[type="message"],
 input[type="email"],
+input[type="date"],
 textarea{
     width: 90%;
     height: 30px;
@@ -130,3 +131,4 @@ form, div, select, input {
     margin-bottom: 15px;
 }
 
+ 
