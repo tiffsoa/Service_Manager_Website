@@ -47,7 +47,9 @@ function displayServices(serviceArray) {
     const bookButtons = document.querySelectorAll('.book-now');
     bookButtons.forEach(button => {
         button.addEventListener("click", function() {
-            alert("This action will take you to the booking and payment form.");
+            const serviceName = button.parentElement.querySelector('h4').textContent;
+            localStorage.setItem('selectedService', serviceName);
+            alert("This action will take you to the booking and payment page.");
             window.location.href = "booking.html";
         });
     });

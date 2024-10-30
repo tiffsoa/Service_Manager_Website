@@ -1,14 +1,3 @@
-//put the name of the service in h2:
-
-// function displayServiceBooked(serviceArray){
-//     serviceArray.forEach(service => {
-//         <h2>${service.name}</h2>
-//     })
-// }
-
-// displayServiceBooked(services);
-
-
 document.getElementById('booking-form').addEventListener('submit', function(event) {
     event.preventDefault(); //to stop default form behaviour like reloading the page
 
@@ -45,4 +34,10 @@ function resetForm() {
     document.getElementById('booking-form').reset(); 
 }
 
-
+document.addEventListener('DOMContentLoaded', function(){
+    const requestedService = document.querySelector('#manage-services h2');
+    const selectedService = localStorage.getItem('selectedService');
+    if (selectedService){
+        requestedService.textContent = `Requested Service: ${selectedService}`;
+    }
+});
