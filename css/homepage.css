@@ -1,0 +1,158 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    padding: 10px;
+    margin: 150px;
+    margin-bottom: -50px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+.left-side {
+    width: 55%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.right-side {
+    width: 45%;
+    padding: 10px;
+}
+
+#img {
+    width: 100%;
+    height: auto;
+}
+
+h1 {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: left;
+    font-size: 65px;
+}
+
+h1 em {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-decoration: underline;
+}
+
+p {
+    margin-top: 10px;
+    text-align: left;
+    font-size: 20px;
+}
+
+
+* {
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-image: url('https://img.freepik.com/free-vector/green-blue-gradient-blur-background_53876-105432.jpg');
+
+}
+
+.topnav {
+    overflow: hidden;
+    margin-bottom: 40px;
+}
+
+.topnav a {
+    float: right;
+    color: rgba(101, 97, 105, 0.855);
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+.topnav a:hover {
+    text-decoration: underline;
+    color: #000;
+}
+
+.topnav a.active {
+    color: #000;
+    text-decoration: underline;
+}
+
+#logo {
+    margin-right: 79%;
+    margin-top: -40px;
+    padding: 0px;
+}
+
+#logo-img {
+    width: 150px;
+}
+
+.cta-button {
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #630da9; /* Primary color for the button */
+    color: #fff;
+    font-size: 23px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 40px;
+}
+
+
+.cta-button:hover {
+    background-color: #2e014c; /* Darker shade on hover */
+    text-decoration: underline; /* Optional hover effect */
+}
+
+footer {
+    background-color: #630da9;
+    color: #fff; /* Slightly transparent white */
+    padding: 50px; /* Space inside the footer */
+    text-align: center; /* Center the text */
+    bottom: 0; /* Ensure footer sticks to bottom if needed */
+    width: 100%; /* Full width */
+}
+
+.footer-container {
+    margin: auto; /* Center the container */
+}
+
+#footer-company {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.social-media a {
+    font-size: 40px;
+    color: #fff;
+
+}
+
+.social-media a:hover {
+    color: #0A4834; /* Change color on hover */
+}
+
+
+.footer-container a {
+    margin: 0 10px; /* Space between links */
+    text-decoration: none; /* Remove underline */
+}
+
+.footer-container a:hover {
+    text-decoration: underline;
+}
+
+.quick-links a {
+    color: #fff;
+}
+
+
+
+
