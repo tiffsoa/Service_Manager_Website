@@ -53,4 +53,15 @@ function displayServices(serviceArray) {
     });
 }
 
+const searchInput = document.getElementById('search'); 
+const servicesGrid = document.getElementById('services-grid');
+
+searchInput.addEventListener('input', function() {
+    const query = searchInput.value.toLowerCase();
+    const filteredServices = services.filter(service =>
+        service.name.toLowerCase().includes(query)
+    );
+    displayServices(filteredServices);
+});
+
 displayServices(services);
