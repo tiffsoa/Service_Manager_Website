@@ -1,7 +1,7 @@
 # Service_Manager_Website
 
 ## Project Description
-ServeHive is a web-based platform designed for service companies to manage their services and for customers to 
+This is a platform designed for service companies to manage their services and for customers to 
 request and manage services. The system allows businesses to offer a range of services, and customers can sign up,
 browse, book, and pay for these services through the website. It's designed to be adaptable to any type of service company (cleaning, repairs, etc...)
 
