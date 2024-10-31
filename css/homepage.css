@@ -40,7 +40,8 @@ h1 em {
 }
 
 p {
-    margin-top: 10px;
+    margin: 30px;
+    margin-left: 0;
     text-align: left;
     font-size: 20px;
 }
@@ -62,6 +63,12 @@ body {
 .topnav {
     overflow: hidden;
     margin-bottom: 40px;
+        padding: 1.5rem 0 1rem 0;
+        padding-left: 1rem;
+        padding-right: 1rem;
+           margin-right: 30px;
+
+    
 }
 
 .topnav a {
@@ -70,7 +77,8 @@ body {
     text-align: center;
     padding: 14px 20px;
     text-decoration: none;
-    font-size: 17px;
+    font-size: 23px;
+    transition: all .5s ease;
 }
 
 .topnav a:hover {
@@ -94,21 +102,33 @@ body {
 }
 
 .cta-button {
-    padding: 20px;
+    padding: 10px;
+    margin-right: 300px;
     margin-top: 20px;
     background-color: #630da9; /* Primary color for the button */
-    color: #fff;
+    color:transparent;
     font-size: 23px;
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    border-radius: 40px;
+    border-radius: 40px; 
+    padding: .9rem 1.5rem;
+    height: auto;
+    border-color: rgba(0, 0, 0);
+    letter-spacing: 0.05rem;
+    appearance: none;
+    border: .05rem solid #ffffff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: all .2s ease;
+    width: 55%;
 }
 
 
 .cta-button:hover {
     background-color: #2e014c; /* Darker shade on hover */
-    text-decoration: underline; /* Optional hover effect */
+    text-decoration: none; /* Optional hover effect */
+    color: white;
 }
 
 footer {
@@ -137,6 +157,7 @@ footer {
 
 .social-media a:hover {
     color: #0A4834; /* Change color on hover */
+    transition: all .5s ease;
 }
 
 
@@ -152,7 +173,3 @@ footer {
 .quick-links a {
     color: #fff;
 }
-
-
-
-
