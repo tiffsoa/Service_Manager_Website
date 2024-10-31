@@ -9,8 +9,7 @@ document.getElementById('booking-form').addEventListener('submit', function(even
     const frequency = document.getElementById('frequency').value;
     const serviceDate = document.getElementById('serviceDate').value;
     const comments = document.getElementById('comments').value;
-    const payment = document.getElementById('card').value;
-    
+    let payment = document.querySelector('input[name="payment"]:checked').value;    
 
     //display confirmation with form input values
     document.getElementById('confirmName').textContent = `Name: ${name}`;
@@ -20,7 +19,7 @@ document.getElementById('booking-form').addEventListener('submit', function(even
     document.getElementById('confirmFrequency').textContent = `Frequency: ${frequency}`;
     document.getElementById('confirmServiceDate').textContent = `Service Date: ${serviceDate}`;
     document.getElementById('confirmComments').textContent = `Comments: ${comments}`;
-    document.getElementById('confirmPayment').textContent = `Payment by card: ${payment}`;
+    document.getElementById('confirmPayment').textContent = `Payment by: ${payment}`;
 
     //show the confirmation section and hide the form
     document.getElementById('booking-form').style.display = 'none';
