@@ -3,7 +3,7 @@
     flex-direction: row;
     height: 100vh;
     padding: 10px;
-    margin: 150px;
+    margin-top: 150px;
     margin-bottom: -50px;
     margin-left: 100px;
     margin-right: 100px;
@@ -61,6 +61,7 @@ body {
 }
 
 .topnav {
+    font-weight: lighter;
     overflow: hidden;
     margin-bottom: 40px;
         padding: 1.5rem 0 1rem 0;
@@ -92,13 +93,13 @@ body {
 }
 
 #logo {
-    margin-right: 79%;
-    margin-top: -40px;
+    margin-right: 90%;
+    margin-top: -50px;
     padding: 0px;
 }
 
 #logo-img {
-    width: 150px;
+    width: 50px;
 }
 
 .cta-button {
