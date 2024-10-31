@@ -9,7 +9,7 @@ document.getElementById('booking-form').addEventListener('submit', function(even
     const frequency = document.getElementById('frequency').value;
     const serviceDate = document.getElementById('serviceDate').value;
     const comments = document.getElementById('comments').value;
-    let payment = document.querySelector('input[name="payment"]:checked').value;    
+    const payment = document.querySelector('input[name="payment"]:checked').value;    
 
     //display confirmation with form input values
     document.getElementById('confirmName').textContent = `Name: ${name}`;
