@@ -1,14 +1,15 @@
 
-const services = [
-    { name: "House Cleaning", company: "AllHomia", description: "Cleaning and organizing homes", price: 90},
-    { name: "Garden Maintenance", company: "AllHomia", description: "Making your garden look pretty and clean", price: 150},
-    { name: "Plumbing", company: "AllHomia", description: "Fixing leaks and installing pipes", price: 60},
-    { name: "Lawn Mowing", company: "AllHomia", description: "Maintening lawns and gardens", price: 50},
-    { name: "Deep Cleaning", company: "AllHomia", description: "Cleaning every corner of your house", price: 140},
-    { name: "Furniture Installation", company: "AllHomia", description: "Transporting and isntalling your furniture for you", price: 100},
-];
+// fetch data from the server
+fetch("http://localhost:3000/services/test")
+.then(response => response.json()) //get the json response that was sent 
+.then(services_from_database => {
+    console.log("services", services_from_database);
+    displayServices(services_from_database);
+});
 
 function displayServices(serviceArray) {
+
+    console.log("serviceArray", serviceArray);
     const container = document.getElementById('services-grid');
     container.innerHTML = '';
 
@@ -41,10 +42,11 @@ const servicesGrid = document.getElementById('services-grid');
 
 searchInput.addEventListener('input', function() {
     const query = searchInput.value.toLowerCase();
-    const filteredServices = services.filter(service =>
-        service.name.toLowerCase().includes(query)
-    );
-    displayServices(filteredServices);
+    
+    fetch(`http://localhost:3000/services?search=${query}`)
+    .then(response => response.json()) //get the json response that was sent 
+    .then(filteredServices => {
+        console.log("filteredServices", filteredServices);
+        displayServices(filteredServices);
+    });
 });
-
-displayServices(services);
