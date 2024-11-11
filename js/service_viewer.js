@@ -6,7 +6,6 @@ const services = [
     { id: 2, name: "Service B", date: "2024-11-05", time: "11:00 AM - 12:00 PM", description: "This is a detailed description of Service B.", status: "Upcoming" },
     { id: 3, name: "Service C", date: "2024-09-15", time: "01:00 PM - 02:00 PM", description: "This is a detailed description of Service C.", status: "Past" },
     { id: 4, name: "Service D", date: "2024-09-25", time: "02:00 PM - 03:00 PM", description: "This is a detailed description of Service D.", status: "Past" },
-    // Add more entries as needed
 ];
 
 // Function to get the service ID from the URL
@@ -31,7 +30,7 @@ function displayServiceDetails(service) {
 
 // Function to handle rescheduling service
 document.getElementById("rescheduleService").addEventListener("click", function() {
-    alert("Service has been rescheduled!"); // Replace with actual rescheduling logic
+    alert("Service has been rescheduled!"); // Replace with actual rescheduling logic(Later)
 });
 
 
@@ -39,7 +38,7 @@ document.getElementById("rescheduleService").addEventListener("click", function(
 function cancelService(serviceId) {
     const confirmed = confirm("Are you sure you want to cancel this service?");
     if (confirmed) {
-        // Simulate removing the service from the array (in practice, you would also handle this on the server)
+        // Simulate removing the service from the array (Later)
         const serviceIndex = services.findIndex(service => service.id === serviceId);
         if (serviceIndex > -1) {
             services.splice(serviceIndex, 1); // Remove the service from the array
