@@ -73,10 +73,10 @@ header {
 
 button {
     padding: 10px 15px;
-    margin: 20px 0; /* Margin for spacing buttons */
+    margin: 20px 0; 
     border: none;
     border-radius: 5px;
-    background-color: #630da9; /* Button background color */
+    background-color: #630da9;
     color: white;
     cursor: pointer;
     font-size: 16px;
@@ -84,7 +84,7 @@ button {
 
 
 button:hover {
-    background-color: #0A4834; /* Button hover color */
+    background-color: #0A4834;
 }
 
 /* Responsive Design */
@@ -103,9 +103,9 @@ button:hover {
     }
 }
 .service {
-    background-color: rgba(243, 241, 246, 0.9); /* Light background for services */
-    margin: 10px 0; /* Space between service items */
-    padding: 20px; /* Padding inside service items */
+    background-color: rgba(243, 241, 246, 0.9);
+    margin: 10px 0;
+    padding: 20px;
     border-radius: 10px; /* Rounded corners */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
 }
