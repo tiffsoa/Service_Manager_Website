@@ -168,7 +168,7 @@ body {
 
 /* Ensure spacing between sections */
 section {
-    margin-bottom: 40px; /* Space between different sections on the dashboard */
+    margin-bottom: 40px; 
 }
 
 /* For elements inside the sections to have proper spacing */
@@ -179,7 +179,7 @@ form, div, select, input {
 /* Custom scrollbar styling */
 #services-list::-webkit-scrollbar,
 .container::-webkit-scrollbar {
-    width: 8px; /* Adjust the width of the scrollbar */
+    width: 8px;
 }
 
 #services-list::-webkit-scrollbar-track,
