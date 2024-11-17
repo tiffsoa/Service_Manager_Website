@@ -10,6 +10,7 @@
 
 <body>
     <div class="container">
+        <!-- Navigation Bar -->
         <div class="topnav">
             <a class="active">PROFILE</a>
             <a href="services.html">SERVICES</a>
@@ -25,7 +26,7 @@
                 <div class="form">
                     <form id="admin-form">
                         <label for="admin-name">Name</label><br>
-                        <input type="text" id="admin-name" placeholder="Admin Name" required><br>
+                        <input type="text" id="admin-name" placeholder="Admin Name"><br>
                         <label for="admin-logo">Logo URL</label><br>
                         <input type="text" id="admin-logo" placeholder="Logo URL"><br>
                         <label for="admin-address">Address</label><br>
@@ -37,6 +38,7 @@
                 <div id="admin-details"></div>
             </section>
 
+            <!-- Manage Services Section -->
             <section id="manage-services">
                 <h2>Manage Services</h2>
                 <div class="form">
@@ -44,7 +46,7 @@
                         <label for="service-name">Service Name</label><br>
                         <input type="text" id="service-name" placeholder="Service Name" required><br>
                         <label for="service-price">Price</label><br>
-                        <input type="number" id="service-price" placeholder="Price" required>
+                        <input type="number" id="service-price" placeholder="Price" required><br>
                         <button class="button_s" type="submit">Add Service</button>
                     </form>
                 </div>
@@ -57,12 +59,13 @@
                     <option value="">Select a service</option>
                 </select>
                 <div id="modify-section" style="display: none;">
-                    <label for="new-service-price">New Price</label>
-                    <input type="number" id="new-service-price" placeholder="New Price" required>
+                    <label for="new-service-price">New Price</label><br>
+                    <input type="number" id="new-service-price" placeholder="New Price" required><br>
                     <button id="modify-button">Modify Service</button>
                 </div>
             </section>
 
+            <!-- Customer Management Section -->
             <section id="customer-management">
                 <h2>Customer Management</h2>
                 <h3>Client Accounts</h3>
@@ -70,7 +73,6 @@
             </section>
         </div>
     </div>
-
     <script src="js/admin_dashboard.js"></script>
 </body>
 
