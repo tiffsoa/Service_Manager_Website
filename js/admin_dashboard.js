@@ -127,10 +127,10 @@ async function removeService(index) {
 function updateOverview() {
     const servicesList = document.getElementById('services-list');
     servicesList.innerHTML = services.length
-        ? services.map((service, index) => `
+        ? services.map((service) => `
             <div>
                 ${service.name}: $${service.price}
-                <button onclick="removeService(${index})">Remove</button>
+                <button onclick="removeService(${service.id})">Remove</button>
             </div>
         `).join('')
         : 'No services available.';

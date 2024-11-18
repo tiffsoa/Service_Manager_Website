@@ -1,6 +1,6 @@
 
 // fetch data from the server
-fetch("http://localhost:3000/services/test")
+fetch("http://localhost:3000/services")
 .then(response => response.json()) //get the json response that was sent 
 .then(services_from_database => {
     console.log("services", services_from_database);

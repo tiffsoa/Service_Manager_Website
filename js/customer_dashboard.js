@@ -28,12 +28,12 @@ function displayServices(services) {
         const serviceDiv = document.createElement("div");
         serviceDiv.className = "service";
         serviceDiv.innerHTML = `
-            <h3>${service.name}</h3>
-            <p><strong>Company:</strong> ${service.company}</p>
+            <h3>${service.service.name}</h3>
+            <p><strong>Company:</strong> ${service.companyName}</p>
             <p><strong>Date:</strong> ${service.date}</p>
             <p><strong>Time:</strong> ${service.time}</p>
-            <p><strong>Description:</strong> ${service.description}</p>
-            <p><strong>Status:</strong> ${service.status}</p>
+            <p><strong>Description:</strong> ${service.service.description}</p>
+            <p><strong>Status:</strong> ${service.service.status}</p>
         `;
         serviceList.appendChild(serviceDiv);
     });

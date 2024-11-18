@@ -1,26 +1,46 @@
+const form = document.getElementById("form");
 
-const password = document.getElementById('password');
-const confirm_p = document.getElementById('confirmPassword');
-const form = document.getElementById('form');
-const errorElement = document.getElementById('error');
+form.addEventListener("submit", async (e) => {
+    e.preventDefault(); // Prevent default form submission
 
-form.addEventListener('submit', (e) => {
-    let messages = [];
+    const lastName = document.getElementById("lastname").value.trim();
+    const firstName = document.getElementById("firstname").value.trim();        const phone = document.getElementById("phoneNumber").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const password = document.getElementById("password").value;
+    const confirmPassword = document.getElementById("confirmPassword").value;
 
-    if (password.value.length <= 8) {
-        messages.push('Password must be longer than 8 characters.');
+    const errorDiv = document.getElementById("error");
+
+        
+    if (password !== confirmPassword) {
+        errorDiv.textContent = "Passwords do not match!";
+        errorDiv.style.color = "red";
+        return;
     }
 
-    if (password.value.length >= 20) {
-        messages.push('Password must be less than 20 characters.');
-    }
+        
+    const formData = { lastName, firstName, phone, email, password };
 
-    if (password.value != confirm_p.value) {
-        messages.push('Passwords do not match. Please try again.')
-    }
+    console.log("formDsata", formData)
+    try {
+        const response = await fetch("http://localhost:3000/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+        });
 
-    if (messages.length > 0) {
-        e.preventDefault();
-        errorElement.innerText = messages.join(', ');
+        const data = await response.json();
+
+        if (response.ok) {
+            alert("Sign up successful!");
+            window.location.href = "/signin_c.html"; // Redirect on success
+        } else {
+            errorDiv.textContent = data.error || "Sign up failed!";
+            errorDiv.style.color = "red";
+        }
+    } catch (err) {
+        console.error("Error submitting form:", err);
+        errorDiv.textContent = "An unexpected error occurred.";
+        errorDiv.style.color = "red";
     }
 });
