@@ -32,17 +32,26 @@ async function updateAdminProfile(event) {
     const adminName = document.getElementById('admin-name').value.trim();
     const adminLogo = document.getElementById('admin-logo').value.trim();
     const adminAddress = document.getElementById('admin-address').value.trim();
+    const adminDescription = document.getElementById('admin-description').value.trim();
 
     try {
         await fetchData('/admin', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: adminName, logo: adminLogo, address: adminAddress })
+            body: JSON.stringify({
+                name: adminName,
+                logo: adminLogo,
+                address: adminAddress,
+                description: adminDescription
+            })
         });
 
+        // Clear form fields
         document.getElementById('admin-name').value = '';
         document.getElementById('admin-logo').value = '';
         document.getElementById('admin-address').value = '';
+        document.getElementById('admin-description').value = '';
+
         loadAdminProfile();
     } catch (error) {
         alert(`Failed to update admin profile: ${error.message}`);
@@ -55,7 +64,8 @@ function updateAdminDetails() {
         <div>
             <img src="${adminProfile.logo}" alt="Admin Logo" width="100" height="100"><br>
             <strong>Name:</strong> ${adminProfile.name}<br>
-            <strong>Address:</strong> ${adminProfile.address}
+            <strong>Address:</strong> ${adminProfile.address}<br>
+            <strong>Description:</strong> ${adminProfile.description || 'No description provided.'}
         </div>
     `;
 }
@@ -76,16 +86,24 @@ async function addService(event) {
 
     const serviceName = document.getElementById('service-name').value.trim();
     const servicePrice = parseFloat(document.getElementById('service-price').value);
+    const serviceDescription = document.getElementById('service-description').value.trim();
 
     try {
         await fetchData('/services', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name: serviceName, price: servicePrice })
+            body: JSON.stringify({
+                name: serviceName,
+                price: servicePrice,
+                description: serviceDescription
+            })
         });
 
+        // Clear form fields
         document.getElementById('service-name').value = '';
         document.getElementById('service-price').value = '';
+        document.getElementById('service-description').value = '';
+
         loadServices();
     } catch (error) {
         alert(`Failed to add service: ${error.message}`);
@@ -95,6 +113,7 @@ async function addService(event) {
 async function modifyService() {
     const selectedIndex = document.getElementById('service-select').value;
     const newPrice = parseFloat(document.getElementById('new-service-price').value);
+    const newDescription = document.getElementById('new-service-description').value.trim();
 
     if (selectedIndex === "") {
         alert("Please select a service to modify.");
@@ -105,10 +124,16 @@ async function modifyService() {
         await fetchData(`/services/${selectedIndex}`, {
             method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ price: newPrice })
+            body: JSON.stringify({
+                price: newPrice,
+                description: newDescription
+            })
         });
 
+        // Clear form fields
         document.getElementById('new-service-price').value = '';
+        document.getElementById('new-service-description').value = '';
+
         loadServices();
     } catch (error) {
         alert(`Failed to modify service: ${error.message}`);
@@ -127,10 +152,11 @@ async function removeService(index) {
 function updateOverview() {
     const servicesList = document.getElementById('services-list');
     servicesList.innerHTML = services.length
-        ? services.map((service) => `
+        ? services.map((service, index) => `
             <div>
-                ${service.name}: $${service.price}
-                <button onclick="removeService(${service.id})">Remove</button>
+                <strong>${service.name}</strong>: $${service.price}<br>
+                <em>${service.description || 'No description provided.'}</em><br>
+                <button onclick="removeService(${index})">Remove</button>
             </div>
         `).join('')
         : 'No services available.';
