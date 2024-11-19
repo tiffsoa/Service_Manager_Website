@@ -59,15 +59,16 @@ label {
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+textarea {
     width: 90%;
-    height: 30px;
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 15px;
     margin-bottom: 20px;
     background-color: rgba(243, 241, 246, 0.855);
+    resize: none; /* Prevent textarea resizing */
 }
 
 /* Button Styles */
@@ -107,6 +108,19 @@ h3 {
     margin: 10px 0;
 }
 
+/* Description Field Styles */
+textarea {
+    height: 80px;
+}
+
+.description-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
 /* Select Box Styles */
 select {
     width: 90%;
@@ -130,6 +144,13 @@ select {
     background-color: rgba(243, 241, 246, 0.855);
 }
 
+#services-list .service-description {
+    font-size: 14px;
+    color: #555;
+    margin-top: 5px;
+    font-style: italic;
+}
+
 /* Modify Section Styles */
 #modify-section {
     margin-top: 20px;
@@ -151,7 +172,7 @@ section {
 }
 
 /* General Element Spacing */
-form, div, select, input {
+form, div, select, input, textarea {
     margin-bottom: 15px;
 }
 
