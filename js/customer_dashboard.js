@@ -17,6 +17,22 @@ async function fetchCustomerServices() {
     }
 }
 
+// Function to fetch customer invoices from the backend
+async function fetchCustomerInvoices() {
+    try {
+        const response = await fetch(`http://localhost:3000/customer/${customerId}/invoices`);
+        const invoices = await response.json();
+
+        if (Array.isArray(invoices) && invoices.length > 0) {
+            displayInvoices(invoices);
+        } else {
+            displayNoInvoicesMessage();
+        }
+    } catch (error) {
+        console.error('Error fetching customer invoices:', error);
+    }
+}
+
 // Function to display services on the dashboard
 function displayServices(services) {
     const serviceList = document.getElementById("serviceList");
@@ -28,14 +44,34 @@ function displayServices(services) {
         const serviceDiv = document.createElement("div");
         serviceDiv.className = "service";
         serviceDiv.innerHTML = `
-            <h3>${service.service.name}</h3>
+            <h3>${service.name}</h3>
             <p><strong>Company:</strong> ${service.companyName}</p>
             <p><strong>Date:</strong> ${service.date}</p>
             <p><strong>Time:</strong> ${service.time}</p>
-            <p><strong>Description:</strong> ${service.service.description}</p>
-            <p><strong>Status:</strong> ${service.service.status}</p>
+            <p><strong>Description:</strong> ${service.description}</p>
         `;
         serviceList.appendChild(serviceDiv);
+    });
+}
+
+// Function to display invoices on the dashboard
+function displayInvoices(invoices) {
+    const invoiceList = document.getElementById("invoiceList");
+    const loadingInvoices = document.getElementById("loadingInvoices");
+
+    loadingInvoices.style.display = "none"; // Hide loading indicator for invoices
+
+    invoices.forEach(invoice => {
+        const invoiceDiv = document.createElement("div");
+        invoiceDiv.className = "invoice";
+        invoiceDiv.innerHTML = `
+            <h3>Invoice #${invoice.id}</h3>
+            <p><strong>Service ID:</strong> ${invoice.serviceId}</p>
+            <p><strong>Amount:</strong> $${invoice.amount}</p>
+            <p><strong>Status:</strong> ${invoice.status}</p>
+            <p><strong>Due Date:</strong> ${invoice.dueDate}</p>
+        `;
+        invoiceList.appendChild(invoiceDiv);
     });
 }
 
@@ -43,6 +79,12 @@ function displayServices(services) {
 function displayNoServicesMessage() {
     const serviceList = document.getElementById("serviceList");
     serviceList.innerHTML = '<p>You have no services booked yet.</p>';
+}
+
+// Function to display a message when no invoices are available
+function displayNoInvoicesMessage() {
+    const invoiceList = document.getElementById("invoiceList");
+    invoiceList.innerHTML = '<p>You have no invoices available.</p>';
 }
 
 // Function to handle sign out
@@ -84,7 +126,8 @@ async function deleteAccount(customerId) {
     }
 }
 
-// Load customer services on page load
+// Load customer services and invoices on page load
 document.addEventListener('DOMContentLoaded', () => {
     fetchCustomerServices();
+    fetchCustomerInvoices();
 });

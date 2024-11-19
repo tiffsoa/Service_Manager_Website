@@ -26,14 +26,16 @@
             <button id="deleteAccount">Delete Account</button>
         </section>
 
-        <section class="billing">
+        <!-- Invoices Section -->
+        <section class="invoices">
             <h2>Overview of Billings</h2>
-            <ul>
-                <li>Invoice #001 - Amount: $150 - Status: Paid</li>
-                <li>Invoice #002 - Amount: $200 - Status: Pending</li>
-            </ul>
+            <div id="invoiceList">
+                <!-- Invoices will be dynamically populated here -->
+            </div>
+            <div id="loadingInvoices" style="display: none;">Loading invoices...</div>
         </section>
 
+        <!-- Services Section -->
         <section class="services">
             <h2>Your Services</h2>
             <div id="serviceList">
@@ -41,6 +43,7 @@
             </div>
             <div id="loading" style="display: none;">Loading more services...</div>
         </section>
+
     </div>
 
     <script src="js/customer_dashboard.js"></script>

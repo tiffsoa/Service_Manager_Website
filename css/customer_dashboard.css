@@ -84,7 +84,7 @@ header {
 }
 
 /* Sections */
-.edit-delete, .services, .billing {
+.edit-delete, .services, .invoice {
     margin-bottom: 30px;
     padding: 20px;
     border-radius: 15px;
@@ -92,7 +92,7 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.edit-delete h2, .services h2, .billing h2 {
+.edit-delete h2, .services h2, .invoice h2 {
     margin-top: 0;
     font-size: 24px;
     color: #630da9;
@@ -114,38 +114,6 @@ button:hover {
 }
 
 /* Services Section */
-#upcomingServices, #pastServices {
-    margin-top: 10px;
-}
-
-h3 {
-    font-size: 20px;
-}
-
-/* Billing Section */
-.billing ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.billing li {
-    background: rgba(243, 241, 246, 0.7);
-    padding: 10px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-/* Loading Indicator */
-#loading {
-    text-align: center;
-    font-size: 20px;
-    margin: 20px;
-    color: #630da9;
-    display: none;
-}
-
-/* Services List */
 .services {
     flex: 1;
     overflow-y: auto;
@@ -168,6 +136,41 @@ h3 {
 .service p {
     font-size: 16px;
     color: #333;
+}
+
+/* Billing Section */
+.invoice #invoiceList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.invoice .invoice {
+    background: rgba(243, 241, 246, 0.7);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.invoice .invoice p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #333;
+}
+
+.invoice .invoice .invoice-status {
+    font-weight: bold;
+    color: #630da9;
+}
+
+/* Loading Indicators */
+#loading, #loadingInvoices {
+    text-align: center;
+    font-size: 20px;
+    margin: 20px;
+    color: #630da9;
+    display: none;
 }
 
 /* Responsive Design */
