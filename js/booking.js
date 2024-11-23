@@ -16,16 +16,16 @@ document.getElementById('booking-form').addEventListener('submit', async functio
         name,
         email,
         phoneNumber: tel,
-        address,
+        address: message,
         frequency,
-        date: serviceDate,
+        serviceDate,
         comments,
         payment,
         terms: true 
     };
 
     try {
-        const response = await fetch('/bookings', {
+        const response = await fetch("http://localhost:3000/bookings", {
             method: 'POST',
             headers: {'Content-Type': 'application/json' },
             body: JSON.stringify(bookingData),
@@ -35,15 +35,16 @@ document.getElementById('booking-form').addEventListener('submit', async functio
             throw new Error('Failed to save booking');
         }
 
-        const newBooking = await response.json();
+       /*  const newBooking = await response.json();
 
         // Fetch the booking details to display for confirmation
-        const bookingResponse = await fetch(`/bookings/${newBooking.id}`);
+        const bookingResponse = await fetch(`http://localhost:3000/bookings/${newBooking.id}`);
         if (!bookingResponse.ok) {
             throw new Error('Failed to fetch booking details');
-        }
+        } */
 
-        const booking = await bookingResponse.json();
+        const booking = await response.json();
+        console.log("booking", booking)
 
         //display confirmation with form input values
         document.getElementById('confirmName').textContent = `Name: ${name}`;
