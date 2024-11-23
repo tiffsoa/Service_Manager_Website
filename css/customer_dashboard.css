@@ -21,7 +21,6 @@ body {
 /* Navigation */
 .topnav {
     background-color: #fff;
-    overflow: hidden;
     margin-bottom: 30px;
     border-radius: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -116,8 +115,7 @@ button:hover {
 /* Services Section */
 .services {
     flex: 1;
-    overflow-y: auto;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .service {

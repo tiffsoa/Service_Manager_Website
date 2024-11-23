@@ -11,13 +11,11 @@
 <body>
     <div class="container">
         <!-- Navigation Bar -->
-        <header class="navbar">
-            <nav>
-                <a class="active" href="#">PROFILE</a>
-                <a href="services.html">SERVICES</a>
-                <a href="homepage.html">HOME</a>
-            </nav>
-        </header>
+        <div class="topnav">
+            <a class="active">PROFILE</a> 
+            <a href="services.html">SERVICES</a>
+            <a href="homepage.html">HOME</a>
+        </div>
 
         <!-- Main Content -->
         <main class="dashboard">
@@ -28,15 +26,15 @@
                 <h2>Admin Profile</h2>
                 <div class="form">
                     <form id="admin-form">
-                        <label for="admin-name">Name</label>
-                        <input type="text" id="admin-name" placeholder="Admin Name">
-                        <label for="admin-logo">Logo URL</label>
-                        <input type="text" id="admin-logo" placeholder="Logo URL">
-                        <label for="admin-address">Address</label>
-                        <input type="text" id="admin-address" placeholder="Admin Address">
-                        <label for="admin-description">Description</label>
-                        <textarea id="admin-description" placeholder="Write a short description about the admin"></textarea>
-                        <button type="submit">Update Profile</button>
+                        <label for="admin-name">Name</label></br>
+                        <input type="text" id="admin-name" placeholder="Admin Name"></br>
+                        <label for="admin-logo">Logo URL</label></br>
+                        <input type="text" id="admin-logo" placeholder="Logo URL"></br>
+                        <label for="admin-address">Address</label></br>
+                        <input type="text" id="admin-address" placeholder="Admin Address"></br>
+                        <label for="admin-description">Description</label></br>
+                        <textarea id="admin-description" placeholder="Write a short description about the admin"></textarea></br>
+                        <button class="button_s" type="submit">Update Profile</button>
                     </form>
                 </div>
                 <h3>Current Admin Profile</h3>
@@ -48,13 +46,13 @@
                 <h2>Manage Services</h2>
                 <div class="form">
                     <form id="service-form">
-                        <label for="service-name">Service Name</label>
-                        <input type="text" id="service-name" placeholder="Service Name" required>
-                        <label for="service-price">Price</label>
-                        <input type="number" id="service-price" placeholder="Price" required>
-                        <label for="service-description">Description</label>
-                        <textarea id="service-description" placeholder="Write a short description about the service" required></textarea>
-                        <button type="submit">Add Service</button>
+                        <label for="service-name">Service Name</label></br>
+                        <input type="text" id="service-name" placeholder="Service Name" required></br>
+                        <label for="service-price">Price</label></br>
+                        <input type="number" id="service-price" placeholder="Price" required></br>
+                        <label for="service-description">Description</label></br>
+                        <textarea id="service-description" placeholder="Write a short description about the service" required></textarea></br>
+                        <button class="button_s" type="submit">Add Service</button>
                     </form>
                 </div>
 
@@ -67,10 +65,10 @@
                         <option value="">Select a service</option>
                     </select>
                     <div id="modify-section" style="display: none;">
-                        <label for="new-service-price">New Price</label>
-                        <input type="number" id="new-service-price" placeholder="New Price" required>
-                        <label for="new-service-description">New Description</label>
-                        <textarea id="new-service-description" placeholder="Update the service description"></textarea>
+                        <label for="new-service-price">New Price</label></br>
+                        <input type="number" id="new-service-price" placeholder="New Price" required></br>
+                        <label for="new-service-description">New Description</label></br>
+                        <textarea id="new-service-description" placeholder="Update the service description"></textarea></br>
                         <button id="modify-button">Modify Service</button>
                     </div>
                 </div>
