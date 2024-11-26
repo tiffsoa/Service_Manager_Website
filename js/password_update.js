@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const successDiv = document.getElementById('success');
 
     // Assuming customerId is available in some global or session storage
-    const customerId = getCustomerIdFromSession(); // Replace with your method to get the logged-in customer ID
+    const customerId = getCustomerIdFromSession();
 
     form.addEventListener('submit', function (e) {
         e.preventDefault(); // Prevent form submission

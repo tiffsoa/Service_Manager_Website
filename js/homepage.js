@@ -1,4 +1,4 @@
-let companyName = "AllHomia";
+let companyName = "EcoCleaners";
 
 function updateCompanyName(name) {
     const elements = document.querySelectorAll(".company");

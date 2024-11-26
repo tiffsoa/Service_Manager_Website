@@ -31,7 +31,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(response => response.json())
             .then(data => {
                 alert("Service canceled successfully.");
-                window.location.href = "customer_dashboard.html"; // Redirect to the dashboard
+                window.location.replace("customer_dashboard.html"); // Redirect to the dashboard
             })
             .catch(error => {
                 console.error('Error canceling service:', error);
@@ -96,6 +96,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Back to dashboard button
     document.getElementById("backButton").addEventListener("click", function() {
-        window.location.href = "customer_dashboard.html";
+        window.location.replace("customer_dashboard.html");
     });
 });

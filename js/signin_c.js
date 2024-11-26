@@ -7,13 +7,7 @@ form.addEventListener('submit', async (e) => {
     const email = document.getElementById('email').value;
     const password = document.getElementById('password').value;
 
-    // Validate password length
-    if (password.length <= 8) {
-        messages.push('Password must be longer than 8 characters.');
-    }
-    if (password.length >= 20) {
-        messages.push('Password must be less than 20 characters.');
-    }
+    
     if (messages.length > 0) {
         errorElement.innerText = messages.join(', ');
         return; // Exit early if validation fails
@@ -25,13 +19,14 @@ form.addEventListener('submit', async (e) => {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ email, password }),
+            credentials: 'include'
         });
 
         const data = await response.json();
 
         if (response.ok) {
             alert("Sign in successful!");
-            window.location.href = '/services.html'; // Redirect to services page
+            window.location.replace('/services.html'); // Redirect to services page
         } else {
             errorElement.textContent = data.error || "Sign in failed!";
         }

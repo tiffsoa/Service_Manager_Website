@@ -32,7 +32,7 @@ function displayServices(serviceArray) {
             const serviceName = button.parentElement.querySelector('h4').textContent;
             localStorage.setItem('selectedService', serviceName);
             alert("This action will take you to the booking and payment page.");
-            window.location.href = "booking.html";
+            window.location.replace("booking.html");
         });
     });
 }

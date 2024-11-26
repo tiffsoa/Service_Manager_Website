@@ -7,6 +7,29 @@ let services = [];
 let customers = [];
 
 // Utility Functions
+async function getCompanyId() {
+    try {
+        const response = await fetch('http://localhost:3000/session/admin', {
+            method: "GET",
+            credentials: "include",
+        });
+
+        const data = await response.json();
+
+        if (data.companyId) {
+            return data.companyId; // Return the company ID from the session
+        } else {
+            alert("You are not logged in!");
+            window.location.replace("signin_admin.html"); // Redirect to admin login page
+            return null;
+        }
+    } catch (error) {
+        console.error('Error fetching admin session:', error);
+    }
+}
+
+
+
 async function fetchData(url, options = {}) {
     const response = await fetch(`${API_BASE}${url}`, options);
     if (!response.ok) {
@@ -19,7 +42,7 @@ async function fetchData(url, options = {}) {
 // Admin Profile
 async function loadAdminProfile() {
     try {
-        adminProfile = await fetchData('/admin');
+        adminProfile = await fetchData(`/admin/${companyId}`);
         updateAdminDetails();
     } catch (error) {
         console.error("Failed to load admin profile:", error.message);
@@ -29,14 +52,17 @@ async function loadAdminProfile() {
 async function updateAdminProfile(event) {
     event.preventDefault();
 
+    const companyId = await getCompanyId();
+    if (!companyId) return;
+
     const adminName = document.getElementById('admin-name').value.trim();
     const adminLogo = document.getElementById('admin-logo').value.trim();
     const adminAddress = document.getElementById('admin-address').value.trim();
     const adminDescription = document.getElementById('admin-description').value.trim();
 
     try {
-        await fetchData('/admin', {
-            method: 'POST',
+        await fetchData(`/admin/${companyId}`, {
+            method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 name: adminName,
@@ -156,7 +182,7 @@ function updateOverview() {
             <div>
                 <strong>${service.name}</strong>: $${service.price}<br>
                 <em>${service.description || 'No description provided.'}</em><br>
-                <button onclick="removeService(${index})">Remove</button>
+                <button onclick="removeService(${service.id})">Remove</button>
             </div>
         `).join('')
         : 'No services available.';
@@ -165,8 +191,8 @@ function updateOverview() {
 function updateServiceSelect() {
     const serviceSelect = document.getElementById('service-select');
     serviceSelect.innerHTML = '<option value="">Select a service</option>';
-    services.forEach((service, index) => {
-        serviceSelect.innerHTML += `<option value="${index}">${service.name}</option>`;
+    services.forEach((service) => {
+        serviceSelect.innerHTML += `<option value="${service.id}">${service.name}</option>`;
     });
 }
 

@@ -1,8 +1,29 @@
-// Sample Customer ID (this would come from session or authentication in practice)
-const customerId = 1;
+// Function to get the logged-in customer ID from the session
+async function getCustomerId() {
+    try {
+        const response = await fetch('http://localhost:3000/session/customer', {
+            method: "GET",
+            credentials: "include"
+        }); // Add an endpoint for this
+        const data = await response.json();
+
+        console.log("response", response)
+        console.log("data", data)
+
+        if (data.customerId) {
+            return data.customerId; // Return the customer ID from the session
+        } else {
+            alert("You are not logged in!");
+            window.location.replace("signin_c.html"); // Redirect to login page if no customer ID
+            return null;
+        }
+    } catch (error) {
+        console.error('Error fetching customer session:', error);
+    }
+}
 
 // Function to fetch customer services from the backend
-async function fetchCustomerServices() {
+async function fetchCustomerServices(customerId) {
     try {
         const response = await fetch(`http://localhost:3000/customer/${customerId}/services`);
         const services = await response.json();
@@ -18,7 +39,7 @@ async function fetchCustomerServices() {
 }
 
 // Function to fetch customer invoices from the backend
-async function fetchCustomerInvoices() {
+async function fetchCustomerInvoices(customerId) {
     try {
         const response = await fetch(`http://localhost:3000/customer/${customerId}/invoices`);
         const invoices = await response.json();
@@ -90,12 +111,12 @@ function displayNoInvoicesMessage() {
 // Function to handle sign out
 document.getElementById("signOut").addEventListener("click", function() {
     alert("You have signed out successfully!");
-    window.location.href = "homepage.html"; // Redirect to homepage
+    window.location.replace("homepage.html"); // Redirect to homepage
 });
 
 // Function to handle update password
 document.getElementById("updatePassword").addEventListener("click", function() {
-    window.location.href = "password_update.html"; // Redirect to password update page
+    window.location.replace("password_update.html"); // Redirect to password update page
 });
 
 // Function to handle account deletion
@@ -117,7 +138,7 @@ async function deleteAccount(customerId) {
 
         if (response.ok) {
             alert("Your account has been deleted successfully!");
-            window.location.href = "homepage.html"; // Redirect to homepage
+            window.location.replace("homepage.html"); // Redirect to homepage
         } else {
             alert("Failed to delete account.");
         }
@@ -127,7 +148,10 @@ async function deleteAccount(customerId) {
 }
 
 // Load customer services and invoices on page load
-document.addEventListener('DOMContentLoaded', () => {
-    fetchCustomerServices();
-    fetchCustomerInvoices();
+document.addEventListener('DOMContentLoaded', async () => {
+    const customerId = await getCustomerId(); // Get the customer ID from session
+    if (customerId) {
+        fetchCustomerServices(customerId);
+        fetchCustomerInvoices(customerId);
+    }
 });

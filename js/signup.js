@@ -33,7 +33,7 @@ form.addEventListener("submit", async (e) => {
 
         if (response.ok) {
             alert("Sign up successful!");
-            window.location.href = "/signin_c.html"; // Redirect on success
+            window.location.replace("/signin_c.html"); // Redirect on success
         } else {
             errorDiv.textContent = data.error || "Sign up failed!";
             errorDiv.style.color = "red";
