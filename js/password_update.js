@@ -1,3 +1,5 @@
+const customerId = localStorage.getItem("customerId");
+
 document.addEventListener('DOMContentLoaded', function () {
     const form = document.getElementById('form');
     const currentPasswordInput = document.getElementById('current-password');
@@ -6,8 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const errorDiv = document.getElementById('error');
     const successDiv = document.getElementById('success');
 
-    // Assuming customerId is available in some global or session storage
-    const customerId = getCustomerIdFromSession();
+
 
     form.addEventListener('submit', function (e) {
         e.preventDefault(); // Prevent form submission
@@ -62,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
         };
 
         // Send POST request to the backend API
-        fetch('http://localhost:3000/update-password', {
+        fetch(`http://localhost:3000/update-password/${customerId}`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

@@ -1,3 +1,6 @@
+const emailError = document.getElementById('email-error');
+const customerEmail = localStorage.getItem('customerEmail');
+const selectedServiceId = localStorage.getItem('selectedServiceId');
 document.getElementById('booking-form').addEventListener('submit', async function(event) {
     event.preventDefault(); //to stop default form behaviour like reloading the page
 
@@ -11,10 +14,18 @@ document.getElementById('booking-form').addEventListener('submit', async functio
     const comments = document.getElementById('comments').value;
     const payment = document.querySelector('input[name="payment"]:checked').value;    
 
+    console.log("customer emial", customerEmail);
+    if (email !== customerEmail) {
+        emailError.style.display = 'block';
+        return;
+    } else {
+        emailError.style.display = 'none';
+    }
+
     const bookingData = {
         // customerId: 1, // how do we dynamically change the customerId 
         name,
-        email,
+        email: customerEmail,
         phoneNumber: tel,
         address: message,
         frequency,
@@ -25,7 +36,7 @@ document.getElementById('booking-form').addEventListener('submit', async functio
     };
 
     try {
-        const response = await fetch("http://localhost:3000/bookings", {
+        const response = await fetch(`http://localhost:3000/bookings/${selectedServiceId}`, {
             method: 'POST',
             headers: {'Content-Type': 'application/json' },
             body: JSON.stringify(bookingData),
@@ -77,5 +88,19 @@ document.addEventListener('DOMContentLoaded', function(){
     const selectedService = localStorage.getItem('selectedService');
     if (selectedService){
         requestedService.textContent = `Requested Service: ${selectedService}`;
+    }
+});
+
+
+document.querySelector('.topnav .active').addEventListener('click', function() {
+    const userRole = localStorage.getItem('userRole');
+    
+    if (userRole === 'customer') {
+        window.location.href = 'customer_dashboard.html';
+    } else if (userRole === 'admin') {
+        window.location.href = 'admin_dashboard.html';
+    } else {
+        alert('Please sign in first');
+        window.location.href = 'login.html';  // Redirect to sign-in page
     }
 });
