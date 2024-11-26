@@ -1,49 +1,5 @@
 const customerId = localStorage.getItem("customerId");
 console.log(customerId);
-// Function to get the logged-in customer ID from the session
-/* async function getCustomerId() {
-  try {
-    const response = await fetch("http://localhost:3000/session/customer", {
-      method: "GET",
-      credentials: "include", // Ensure session cookies are included
-    });
-
-    const data = await response.json();
-    if (data.customerId) {
-      return data.customerId; // Return the customer ID from the session
-    } else {
-      alert("You are not logged in!");
-      window.location.replace("signin_c.html"); // Redirect to login page if no customer ID
-      return null;
-    }
-  } catch (error) {
-    console.error("Error fetching customer session:", error);
-    window.location.replace("signin_c.html"); // Redirect to login page on error
-    return null;
-  }
-} */
-
-// Function to check if the customer is logged in
-/* async function validateCustomerSession() {
-  try {
-    const response = await fetch("http://localhost:3000/session/customer", {
-      method: "GET",
-      credentials: "include", // Ensure session cookies are included
-    });
-
-    if (response.ok) {
-      return true; // Session is valid
-    } else {
-      alert("You are not logged in!");
-      window.location.replace("signin_c.html"); // Redirect to login page
-      return false;
-    }
-  } catch (error) {
-    console.error("Error validating customer session:", error);
-    window.location.replace("signin_c.html"); // Redirect on error
-    return false;
-  }
-} */
 
 // Function to fetch customer services from the backend
 async function fetchCustomerServices(customerId) {

@@ -1,6 +1,6 @@
 // API Base URL
 const API_BASE = "http://localhost:3000";
-const companyId = localStorage.getItem('companyId');
+const companyId = localStorage.getItem("companyId");
 
 // Data Stores
 let adminProfile = {};
@@ -258,11 +258,11 @@ document
   });
 // Function to handle sign out
 document.getElementById("signOut").addEventListener("click", function () {
-    alert("You have signed out successfully!");
-    localStorage.removeItem("userRole");
-    localStorage.removeItem("companyId");
-    window.location.replace("homepage.html"); // Redirect to homepage
-  });
+  alert("You have signed out successfully!");
+  localStorage.removeItem("userRole");
+  localStorage.removeItem("companyId");
+  window.location.replace("homepage.html"); // Redirect to homepage
+});
 // Initialization
 async function initialize() {
   await loadAdminProfile();
@@ -271,5 +271,3 @@ async function initialize() {
 }
 
 initialize();
-
-
