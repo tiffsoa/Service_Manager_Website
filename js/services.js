@@ -1,50 +1,91 @@
+const userRole = localStorage.getItem("userRole");
+if (!userRole) {
+  alert("Please sign in first");
+  window.location.href = "homepage.html";
+}
 
-const services = [
-    { name: "House Cleaning", company: "AllHomia", description: "Cleaning and organizing homes", price: 90},
-    { name: "Garden Maintenance", company: "AllHomia", description: "Making your garden look pretty and clean", price: 150},
-    { name: "Plumbing", company: "AllHomia", description: "Fixing leaks and installing pipes", price: 60},
-    { name: "Lawn Mowing", company: "AllHomia", description: "Maintening lawns and gardens", price: 50},
-    { name: "Deep Cleaning", company: "AllHomia", description: "Cleaning every corner of your house", price: 140},
-    { name: "Furniture Installation", company: "AllHomia", description: "Transporting and isntalling your furniture for you", price: 100},
-];
+// fetch data from the server
+fetch("http://localhost:3000/services", {
+  method: "GET",
+  credentials: "include",
+})
+  .then((response) => response.json()) //get the json response that was sent
+  .then((services_from_database) => {
+    console.log("services", services_from_database);
+    displayServices(services_from_database);
+  });
 
 function displayServices(serviceArray) {
-    const container = document.getElementById('services-grid');
-    container.innerHTML = '';
+  console.log("serviceArray", serviceArray);
+  const container = document.getElementById("services-grid");
+  container.innerHTML = "";
 
-    serviceArray.forEach(service => {
-        const card = `
+  serviceArray.forEach((service) => {
+    const card = `
             <div class="service-card">
                 <h4>${service.name}</h4>
                 <p>${service.description}</p>
                 <div class="prices"> $${service.price} </div>
-                <button class="book-now">Book Now</button>
+                <button class="book-now" data-service-id="${service.id}">Book Now</button>
             </div>
         `;
-        container.innerHTML += card;
-    });
+    container.innerHTML += card;
+  });
 
-    //after generating the buttons, we collect all buttons with the .book-now class using the following function, and loop through each button and attach a click event listener.
-    const bookButtons = document.querySelectorAll('.book-now');
-    bookButtons.forEach(button => {
-        button.addEventListener("click", function() {
-            const serviceName = button.parentElement.querySelector('h4').textContent;
-            localStorage.setItem('selectedService', serviceName);
-            alert("This action will take you to the booking and payment page.");
-            window.location.href = "booking.html";
-        });
+  //after generating the buttons, we collect all buttons with the .book-now class using the following function, and loop through each button and attach a click event listener.
+  const bookButtons = document.querySelectorAll(".book-now");
+  bookButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+      const serviceName = button.parentElement.querySelector("h4").textContent;
+      const serviceId = button.getAttribute("data-service-id");
+      localStorage.setItem("selectedServiceId", serviceId);
+      alert("This action will take you to the booking and payment page.");
+      window.location.replace("booking.html");
     });
+  });
 }
 
-const searchInput = document.getElementById('search'); 
-const servicesGrid = document.getElementById('services-grid');
+const searchInput = document.getElementById("search");
+const servicesGrid = document.getElementById("services-grid");
 
-searchInput.addEventListener('input', function() {
-    const query = searchInput.value.toLowerCase();
-    const filteredServices = services.filter(service =>
-        service.name.toLowerCase().includes(query)
-    );
-    displayServices(filteredServices);
+searchInput.addEventListener("input", function () {
+  const query = searchInput.value.toLowerCase();
+
+  fetch(`http://localhost:3000/services?search=${query}`, {
+    method: "GET",
+    credentials: "include",
+  })
+    .then((response) => response.json()) //get the json response that was sent
+    .then((filteredServices) => {
+      console.log("filteredServices", filteredServices);
+      displayServices(filteredServices);
+    });
 });
 
-displayServices(services);
+document
+  .querySelector('.topnav a[href="customer_dashboard.html"]')
+  .addEventListener("click", function (event) {
+    const userRole = localStorage.getItem("userRole");
+
+    if (userRole === "customer") {
+      window.location.href = "customer_dashboard.html";
+    } else if (userRole === "company") {
+      window.location.href = "admin_dashboard.html";
+    } else {
+      alert("Please sign in first");
+      window.location.href = "login.html"; // Redirect to sign-in page
+      event.preventDefault(); // Prevent default behavior to avoid unwanted navigation
+    }
+  });
+
+// Dynamically update the profile link based on the role
+const profileLink = document.querySelector(
+  '.topnav a[href="customer_dashboard.html"]'
+);
+if (userRole === "customer") {
+  profileLink.setAttribute("href", "customer_dashboard.html");
+} else if (userRole === "company") {
+  profileLink.setAttribute("href", "admin_dashboard.html");
+} else {
+  profileLink.setAttribute("href", "login.html");
+}

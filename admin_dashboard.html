@@ -10,68 +10,84 @@
 
 <body>
     <div class="container">
+        <!-- Navigation Bar -->
         <div class="topnav">
-            <a class="active">PROFILE</a>
+            <a class="active">PROFILE</a> 
             <a href="services.html">SERVICES</a>
             <a href="homepage.html">HOME</a>
         </div>
 
-        <div class="right-side">
+        <!-- Main Content -->
+        <main class="dashboard">
             <h1>Admin Dashboard</h1>
 
+            
+            <button id="signOut">Sign Out</button>
+            
+
             <!-- Admin Profile Section -->
-            <section id="admin-profile">
+            <section id="admin-profile" class="section">
                 <h2>Admin Profile</h2>
                 <div class="form">
                     <form id="admin-form">
-                        <label for="admin-name">Name</label><br>
-                        <input type="text" id="admin-name" placeholder="Admin Name" required><br>
-                        <label for="admin-logo">Logo URL</label><br>
-                        <input type="text" id="admin-logo" placeholder="Logo URL"><br>
-                        <label for="admin-address">Address</label><br>
-                        <input type="text" id="admin-address" placeholder="Admin Address"><br>
-                        <button type="submit">Update Profile</button>
+                        <label for="admin-name">Name</label></br>
+                        <input type="text" id="admin-name" placeholder="Admin Name"></br>
+                        <label for="admin-logo">Logo URL</label></br>
+                        <input type="text" id="admin-logo" placeholder="Logo URL"></br>
+                        <label for="admin-address">Address</label></br>
+                        <input type="text" id="admin-address" placeholder="Admin Address"></br>
+                        <label for="admin-description">Description</label></br>
+                        <textarea id="admin-description" placeholder="Write a short description about the admin"></textarea></br>
+                        <button class="button_s" type="submit">Update Profile</button>
                     </form>
                 </div>
                 <h3>Current Admin Profile</h3>
-                <div id="admin-details"></div>
+                <div id="admin-details" class="profile-details"></div>
             </section>
 
-            <!-- Existing Sections -->
-            <section id="manage-services">
+            <!-- Manage Services Section -->
+            <section id="manage-services" class="section">
                 <h2>Manage Services</h2>
                 <div class="form">
                     <form id="service-form">
-                        <label for="service-name">Service Name</label><br>
-                        <input type="text" id="service-name" placeholder="Service Name" required><br>
-                        <label for="service-price">Price</label><br>
-                        <input type="number" id="service-price" placeholder="Price" required>
+                        <label for="service-name">Service Name</label></br>
+                        <input type="text" id="service-name" placeholder="Service Name" required></br>
+                        <label for="service-price">Price</label></br>
+                        <input type="number" id="service-price" placeholder="Price" required></br>
+                        <label for="service-description">Description</label></br>
+                        <textarea id="service-description" placeholder="Write a short description about the service" required></textarea></br>
                         <button class="button_s" type="submit">Add Service</button>
                     </form>
                 </div>
 
                 <h3>Current Services</h3>
-                <div id="services-list"></div>
+                <div id="services-list" class="services-list"></div>
 
                 <h3>Modify Service</h3>
-                <select id="service-select">
-                    <option value="">Select a service</option>
-                </select>
-                <div id="modify-section" style="display: none;">
-                    <label for="new-service-price">New Price</label>
-                    <input type="number" id="new-service-price" placeholder="New Price" required>
-                    <button id="modify-button">Modify Service</button>
+                <div class="modify-service">
+                    <select id="service-select">
+                        <option value="">Select a service</option>
+                    </select>
+                    <div id="modify-section" style="display: none;">
+                        <label for="new-service-price">New Price</label></br>
+                        <input type="number" id="new-service-price" placeholder="New Price" required></br>
+                        <label for="new-service-description">New Description</label></br>
+                        <textarea id="new-service-description" placeholder="Update the service description"></textarea></br>
+                        <button id="modify-button">Modify Service</button>
+                    </div>
                 </div>
             </section>
 
-            <section id="customer-management">
+            <!-- Customer Management Section -->
+            <section id="customer-management" class="section">
                 <h2>Customer Management</h2>
                 <h3>Client Accounts</h3>
-                <div id="client-list"></div>
+                <div id="client-list" class="client-list"></div>
             </section>
-        </div>
+        </main>
     </div>
 
+    <!-- Scripts -->
     <script src="js/admin_dashboard.js"></script>
 </body>
 

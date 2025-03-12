@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css\customer_dashboard.css">
+    <link rel="stylesheet" href="css/customer_dashboard.css">
     <title>Customer Dashboard</title>
 </head>
 <body>
     <div class="container">
 
         <div class="topnav">
-            <a class="active">PROFILE</a> <!-- Can businesses see the services too ? Or is this just for customers? Here you need to redirect based on the login credentials-->
+            <a class="active">PROFILE</a> 
             <a href="services.html">SERVICES</a>
             <a href="homepage.html">HOME</a>
         </div>
@@ -26,14 +26,16 @@
             <button id="deleteAccount">Delete Account</button>
         </section>
 
-        <section class="billing">
+        <!-- Invoices Section -->
+        <section class="invoices">
             <h2>Overview of Billings</h2>
-            <ul>
-                <li>Invoice #001 - Amount: $150 - Status: Paid</li>
-                <li>Invoice #002 - Amount: $200 - Status: Pending</li>
-            </ul>
+            <div id="invoiceList">
+                <!-- Invoices will be dynamically populated here -->
+            </div>
+            <div id="loadingInvoices" style="display: none;">Loading invoices...</div>
         </section>
 
+        <!-- Services Section -->
         <section class="services">
             <h2>Your Services</h2>
             <div id="serviceList">
@@ -41,8 +43,9 @@
             </div>
             <div id="loading" style="display: none;">Loading more services...</div>
         </section>
+
     </div>
 
-    <script src="js\customer_dashboard.js"></script>
+    <script src="js/customer_dashboard.js"></script>
 </body>
 </html>
